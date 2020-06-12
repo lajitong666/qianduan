@@ -25,7 +25,7 @@ Page({
         'csrf-csrf': 'csrf-csrf'
       },
       success: function (response) {
-        console.log(response.data.data[0]['image'])
+        console.log(response.data.data[0])
         that.setData({
           image:response.data.data[0]['image'],
           author:response.data.data[0]['author'],

@@ -6,11 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    images: '../../images/information.png',
+    images: '',
     path:"",
     fileName:"",
     title:"",
-    detail:""
+    detail:"",
+    imgList: [],
+    userinformation:'',
   },
   /**
    *  文本框输入信息
@@ -34,50 +36,31 @@ Page({
   upload:function(){
     var that = this
     //上传图片
-    console.log(this.data.path)
+    console.log(this.data)
+    wx.getStorage({
+      key: 'userinformation',
+      success (res) {
+        that.setData({
+          userinformation:res.data
+        })
+      }
+    })
+    console.log(that.data.userinformation);
     wx.uploadFile({
-      url: app.globalData.url + '/file/fileUpload',
-      filePath: this.data.path,
-      name: 'file',
+      url: app.globalData.url + '/find/upload',
+      filePath: this.data.imgList[0],
+      name: 'contentImage',
       formData: {
-        fileName: "123.png"
+        name:that.data.userinformation.nickName,
+        userImage:that.data.userinformation.avatarUrl,
+        title:that.data.title,
+        detail: that.data.detail
       },
       success(res) {
-        console.log("===========================")
+        console.log("上传动态完成")
       }
     })
     var fileName = that.data.fileName
-    //上传详情信息
-  /*  wx.getStorage({//获取本地缓存
-      key: "userinformation",
-      success: function (res) {
-        console.log(res.data.nickName)
-        console.log(res.data.avatarUrl)
-        console.log("http://49.233.216.140:8080/lajitong--plus/image/"+fileName)
-        console.log(that.data.title)
-        console.log(that.data.detail)
-        wx.request({        //获取有害垃圾信息
-          url: (app.globalData.url+'/find/upload'),
-          method:'POST',
-          data: {
-            name:res.data.nickName,
-            userImage:res.data.avatarUrl,
-            contentImage:"http://49.233.216.140:8080/lajitong--plus/image/"+fileName,
-            title:that.data.title,
-            detail:that.data.detail
-          },
-          header: {
-            "content-type": "application/x-www-form-urlencoded",
-            'csrf-csrf': 'csrf-csrf'
-          },
-          success:function(response){
-            wx.navigateBack({//返回
-              delta: 1
-            })
-          }
-        })
-      }
-    }) */
   },
   /**
    * 从本地选择图片
@@ -94,11 +77,46 @@ Page({
           images: tempFilePaths[0],
           path:tempFilePaths[0]
         })
+        console.log(this.images);
         var name = this.data.path.split("/")
         this.setData({
           fileName:name[name.length-1]
         })
       },
+    })
+  },
+  ChooseImage() {
+    wx.chooseImage({
+      count: 1, //默认9
+      sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album'], //从相册选择
+      success: (res) => {
+        if (this.data.imgList.length != 0) {
+          this.setData({
+            imgList: this.data.imgList.concat(res.tempFilePaths)
+          })
+        } else {
+          this.setData({
+            imgList: res.tempFilePaths
+          })
+        }
+      }
+    });
+  },
+  DelImg(e) {
+    wx.showModal({
+      title: '召唤师',
+      content: '确定要删除这段回忆吗？',
+      cancelText: '再看看',
+      confirmText: '再见',
+      success: res => {
+        if (res.confirm) {
+          this.data.imgList.splice(e.currentTarget.dataset.index, 1);
+          this.setData({
+            imgList: this.data.imgList
+          })
+        }
+      }
     })
   },
   /**

@@ -42,6 +42,15 @@ Page({
       date: e.detail.value
     })
   },
+
+  @RequestParam(value = "served") String served,
+  @RequestParam(value = "phone") String phone,
+  @RequestParam(value = "date") String date,
+  @RequestParam(value = "serve") String serve,
+  @RequestParam(value = "address") String address
+
+
+
   addOne(e){
     var that = this;
     this.setData({

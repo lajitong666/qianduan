@@ -7,15 +7,15 @@
 	<input placeholder="请输入手机号" value='{{value2}}' bindinput='changeInput' data-prop='value2'></input>
 </view>
 <view class="cu-form-group">
-	<text class="a" decode = "true">&nbsp;日期选择</text>
-	<picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
+	<view class="title">日期选择</view>
+	<picker mode="date" value="{{date}}" start="2020-01-01" end="2022-12-30" bindchange="DateChange">
 		<view class="picker">
 			{{date}}
 		</view>
 	</picker>
 </view>
 <view class="cu-form-group">
-	<text class="a" decode = "true">&nbsp;时间选择</text>
+	<view class="title">时间选择</view>
 	<picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="TimeChange">
 		<view class="picker">
 			{{time}}
@@ -32,23 +32,34 @@
 	</picker>
 </view>
 
+<view class="cu-form-group margin-top">
+	<view class="title">服务类型</view>
+	<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+		<view class="picker">
+			{{index?picker[index]:'fijsofiajo'}}
+		</view>
+	</picker>
+</view>
+
 <view class="cu-form-group">
 	<view class="title">详细地址</view>
 	<input placeholder="请输入您的住址详细地址" value='{{value3}}' bindinput='changeInput' data-prop='value3'></input>
 </view>
 
-<button class="bg-green shadow" data-target="Modal" bindtap="addOne">提交</button>
+<view class="padding flex flex-direction page__hd" style="position:fixed; bottom:0;width:100%;">
+  <button class="cu-btn bg-green lg" data-target="Modal" bindtap="addOne" >提交预约</button>
+</view>
 
 <view class="cu-modal {{modalName=='Modal'?'show':''}}">
-  <view class="cu-dialog">
-    <view class="cu-bar bg-white justify-end">
-      <view class="content">提示框</view>
-      <view class="action" bindtap="hideModal">
-        <text class="cuIcon-close text-red"></text>
-      </view>
-    </view>
-    <view class="padding-xl">
-      您的预定订单提交成功
-    </view>
-  </view>
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white justify-end">
+			<view class="content"></view>
+			<view class="action" bindtap="hideModal">
+				<text class="cuIcon-close text-red"></text>
+			</view>
+		</view>
+		<view class="padding-xl">
+			您的预定订单提交成功
+		</view>
+	</view>
 </view>
