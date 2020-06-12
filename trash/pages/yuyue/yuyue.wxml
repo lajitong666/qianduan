@@ -25,21 +25,13 @@
 
 <view class="cu-form-group margin-top">
 	<view class="title">人员选择</view>
-	<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+	<picker bindchange="PersonChange" value="{{person}}" range="{{servicePersonList}}">
 		<view class="picker">
-			{{index?picker[index]:'fijsofiajo'}}
+			{{person?servicePersonList[person]:'请选择服务人员'}}
 		</view>
 	</picker>
 </view>
 
-<view class="cu-form-group margin-top">
-	<view class="title">服务类型</view>
-	<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
-		<view class="picker">
-			{{index?picker[index]:'fijsofiajo'}}
-		</view>
-	</picker>
-</view>
 
 <view class="cu-form-group">
 	<view class="title">详细地址</view>
