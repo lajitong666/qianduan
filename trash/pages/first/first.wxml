@@ -1,0 +1,54 @@
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"  indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
+
+<view class="grid col-2 padding-sm">
+   <view class="padding-sm m">
+    <view class=" padding radius text-center shadow-blur b">
+      <view class="text-lg">本月已产生垃圾</view>
+      <view class="margin-top-sm">0.5kg</view>
+    </view>
+  </view>
+   <view class="padding-sm m">
+    <view class="padding radius text-center shadow-blur b">
+      <view class="text-lg">预计收益</view>
+      <view class="margin-top-sm">20元</view>
+    </view>
+  </view>
+  <view class="padding-sm m">
+    <view class="bg-gradual-red padding radius text-center shadow-blur a" bindtap="scanCode">
+      <view class="text-lg">扫一扫</view>
+      <view class="margin-top-sm text">扫码得积分</view>
+    </view>
+  </view>
+  <view class="padding-sm m">
+    <navigator url="/pages/info/info">
+    <view class="bg-gradual-orange padding radius text-center shadow-blur a">
+      <view class="text-lg">资讯</view>
+      <view class="margin-top-sm text">点击查看当前资讯</view>
+    </view>
+     </navigator>
+  </view>
+  <view class="padding-sm m">
+    <navigator url="/pages/yuyue/yuyue">
+    <view class="bg-gradual-green padding radius text-center shadow-blur a">
+      <view class="text-lg">预约</view>
+      <view class="margin-top-sm text">垃圾上门回收</view>
+    </view>
+     </navigator>
+  </view>
+  <view class="padding-sm m">
+    <navigator url="/pages/test/list">
+    <view class="bg-gradual-blue padding radius text-center shadow-blur a">
+      <view class="text-lg">关于</view>
+      <view class="margin-top-sm text">查看物业信息</view>
+    </view>
+     </navigator>
+  </view>
+</view>

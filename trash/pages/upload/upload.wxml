@@ -1,0 +1,7 @@
+<!--pages/upload/upload.wxml-->
+<image class="tupian " src='{{images}}' mode='widthFix' bindtap='wordImage'></image>
+<l-textarea indicator="{{true}}" maxlength="100" auto-height="true" placeholder="为你的动态起个标题吧..." bind:lininput="inputTitle"/>
+<l-textarea indicator="{{true}}" maxlength="9999" placeholder="说说此时此刻的想法吧..." bind:lininput="inputDetail"/>
+<view class="padding flex flex-direction page__hd" style="position:fixed; bottom:0;width:100%;">
+	<button class="cu-btn bg-green lg" bindtap="upload">发布</button>
+</view>

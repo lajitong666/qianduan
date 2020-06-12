@@ -1,0 +1,20 @@
+<i-panel title="">
+    <i-notice-bar icon="systemprompt" loop>
+        智能垃圾桶刚刚起步，希望您能给个好评
+    </i-notice-bar>
+</i-panel>
+<view class="padding margin">
+  <navigator url="filter" class="bg-blue padding radius light">
+    <text>感谢您的支持</text>
+  </navigator>
+  <view  class="bg-white padding radius">
+    <text>
+    坚持党对一切工作的领导。党政军民学，东西南北中，党是领导一切的。必须增强政治意识、大局意识、核心意识、看齐意识，自觉维护党中央权威和集中统一领导，自觉在思想上政治上行动上同党中央保持高度一致，完善坚持党的领导的体制机制，坚持稳中求进工作总基调，统筹推进“五位一体”总体布局，协调推进“四个全面”战略布局，提高党把方向、谋大局、定政策、促改革的能力和定力，确保党始终总揽全局、协调各方。
+    </text>
+  </view>
+</view>
+
+
+<view class="lianxiwomen">
+	<button class="cu-btn bg-green shadow-blur round lg">立即联系我们</button>
+</view>

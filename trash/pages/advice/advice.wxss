@@ -1,0 +1,11 @@
+/* pages/about/advice/advice.wxss */
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}
+.btn{
+  margin-top: 100rpx;
+  width:300rpx;
+  height: 100rpx;
+  background-color: rgba(69, 207, 69, 0.589);
+  align-content: center;
+}

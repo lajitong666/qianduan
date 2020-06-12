@@ -1,0 +1,29 @@
+<!--author:Zhang-->
+<!--卡片-->
+<view wx:for="{{findList}}">
+	<view bindtap="choose" data-id="{{item.findId}}" class="cu-card dynamic {{isCard?'no-card':''}}">
+		<view class="cu-item shadow">
+			<view class="cu-list menu-avatar">
+				<view class="cu-item">
+					<view class="cu-avatar round lg" style="background-image:url({{item.userImage}});"></view>
+					<view class="content flex-sub">
+						<view>{{item.name}}</view>
+						<view class="text-gray text-sm flex justify-between">
+							{{item.uploadTime}}
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="text-content">
+				{{item.title}}
+			</view>
+			<view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+				<view class="bg-img {{isCard?'':'only-img'}}" style="background-image:url({{item.contentImage}});" >
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="padding flex flex-direction page__hd" bindtap="upload" style="position:fixed; bottom:0;width:100%;">
+  <button class="cu-btn bg-green lg">发布动态</button>
+</view>

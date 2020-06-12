@@ -1,0 +1,10 @@
+<!--pages/info/info.wxml-->
+<view wx:for="{{infoList}}">
+	<view class="info">
+		<l-card bindtap="choose" type="primary" l-img-class="right-card" position="left" image="{{item.image}}" data-id="{{item.infoId}}">
+			<view class="content">
+				{{item.title}}
+			</view>
+		</l-card>
+	</view>
+</view>

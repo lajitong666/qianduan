@@ -1,0 +1,17 @@
+<view class="cu-card article {{isCard?'no-card':''}}" wx:for="{{messageList}}" wx:for-index="index" wx:for-item="item">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">{{item.synopsis}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item.photo}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content">{{item.detail}}</view>
+        <view>
+          <view class="cu-tag bg-red light sm round">{{item.createDate}}</view>
+          <view class="cu-tag bg-green light sm round">垃圾分类</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

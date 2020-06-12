@@ -1,0 +1,4 @@
+/* pages/info/info.wxss */
+.info{
+  margin-top: 10px;
+}

@@ -1,0 +1,7 @@
+.lianxiwomen {
+  position:fixed;
+  bottom:100px;
+  display:flex;
+  width:100%;
+  justify-content:center;
+}
