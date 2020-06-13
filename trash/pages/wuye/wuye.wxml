@@ -1,0 +1,23 @@
+<view class="content">
+	<view class="top">
+		<view class="top-tr">
+			<image src="{{trimg}}" class="top-trimg"></image>
+		</view>
+		<view class="top-info">
+			<view class="toin-name">{{propertyName}}</view>
+			<view class="toin-info"> 评分:{{grade}}</view>
+			<view style="font-size:15px"> 地址:{{address}}</view>
+		</view>
+	</view>
+	<view class="clear"></view>
+	<view class="info">
+		<view class="in-title">物业简介</view>
+		<view class="in-info">{{propertySynopsis}}</view>
+	</view>
+	<view class="clear"></view>
+	<view class="info">
+		<view class="in-title">所提供服务范围</view>
+		<view class="in-info">{{propertyDetail}}</view>
+	</view>
+	<view class="clear"></view>
+</view>

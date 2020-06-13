@@ -15,7 +15,8 @@
     "pages/information/information",
     "pages/info/info",
     "pages/findDetail/findDetail",
-    "pages/upload/upload"
+    "pages/upload/upload",
+    "pages/wuye/wuye"
   ],
   "window": {
     "backgroundTextStyle": "light",

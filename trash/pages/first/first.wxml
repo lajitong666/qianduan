@@ -44,7 +44,7 @@
      </navigator>
   </view>
   <view class="padding-sm m">
-    <navigator url="/pages/test/list">
+    <navigator url="/pages/wuye/wuye">
     <view class="bg-gradual-blue padding radius text-center shadow-blur a">
       <view class="text-lg">关于</view>
       <view class="margin-top-sm text">查看物业信息</view>
