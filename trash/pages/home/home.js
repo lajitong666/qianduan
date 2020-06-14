@@ -29,7 +29,6 @@ Page({
         that.setData({
           openId: res.data
         }),
-        console.log(res.data)
         console.log("正在获取钟")
         wx.request({
           url: (app.globalData.url + '/user/getUserDetails'),

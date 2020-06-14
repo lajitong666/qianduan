@@ -39,6 +39,6 @@ App({
     appId: 'wx5e3066fcc86059d3',     
     openId: 'l0h5ePG1stxZW7REGKHdrcsCu0',    //每个用户的微信号加密之后的openid
     session_key: null,   //保留
-    appSecret:'520b17599ba0d12d42ab624df4824233',
+    appSecret:'',
   }
 })

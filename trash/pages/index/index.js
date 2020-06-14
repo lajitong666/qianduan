@@ -14,7 +14,6 @@ Page({
     })
   },
   onLoad: function () {
-
     that = this;
     // 查看是否授权
     wx.getSetting({
@@ -28,11 +27,10 @@ Page({
                         console.log(app.globalData.openId)
                     }
                 })
-              
                 wx.getUserInfo({
                     success: function (res) {
                         wx.switchTab({
-                            url: '/pages/home/home',   //授权成功后跳转的页面
+                            url: '/pages/first/first',   //授权成功后跳转的页面
                         })
                     }
                 });
@@ -55,7 +53,6 @@ bindGetUserInfo: function (e) {
         url: (app.globalData.url + '/user/getAppSecure'),
         method: 'post',
         data: {
-
         },
         header: {
           "content-type": "application/x-www-form-urlencoded", // 默认值    
@@ -66,8 +63,6 @@ bindGetUserInfo: function (e) {
           app.globalData.appSecret = response.data.data
         }
       })
-
-
       wx.login({
           success(res) {
               if (res.code) {

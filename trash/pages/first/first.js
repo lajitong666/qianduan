@@ -1,4 +1,4 @@
-const app = getApp();
+var app = getApp();
 
 Page({
 
@@ -42,6 +42,61 @@ Page({
   },
   onLoad: function (options) {
     var that = this
+    wx.request({
+      url: (app.globalData.url + '/user/getAppSecure'),
+      method: 'post',
+      data: {
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded", // 默认值    
+        'csrf-csrf': 'csrf-csrf'
+      },
+      success: function (response) {
+        app.globalData.appSecret = response.data.msg
+      }
+    }),
+    wx.login({
+      success(res) {
+          if (res.code) {
+              // 发起网络请求
+              console.log('用户code'+res.code)          
+              console.log(app.globalData.appSecret)        
+              wx.request({
+                  url: ('https://api.weixin.qq.com/sns/jscode2session?appid=wx5e3066fcc86059d3&secret='+app.globalData.appSecret+'&js_code=' + res.code + '&grant_type=authorization_code'),
+                  // '?m=home&c=Api&a=getOpenId&appid=' + app.globalData.appId + '&secret=' + app.globalData.appSecret + '&js_code=' + res.code + '&grant_type=authorization_code').replace(/\s+/g, ""
+                  // 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.globalData.appId + '&secret=' + app.globalData.appSecret + '&js_code=' + res.code + '&grant_type=authorization_code',
+                  header: {
+                      'content-type': 'application/json' // 默认值                     
+                  },
+                  method: "GET",
+                  success(res) {
+                      app.globalData.openId = res.data.openid;
+                      console.log(res)
+                      console.log("分割线")
+                      wx.setStorage({
+                        key: 'openId',
+                        data: res.data.openid
+                     })
+                      wx.request({
+                              url: (app.globalData.apiUrl + '?m=home&c=Api&a=Add&userid=' + res.data + '&province=' + e.detail.userInfo.province + '&city=' + e.detail.userInfo.city + '&nickname=' + e.detail.userInfo.nickName).replace(/\s+/g, ""),
+                              method: "GET",
+                              header: {
+                                  'content-type': 'application/json'
+                              },
+                              success(res) {
+                                  console.log(res.data)
+                                  wx.setStorage({
+                                      key: 'userid',
+                                      data: res.data[0]["ID"]
+                                  })
+                              }
+                          })    
+                  }
+              })
+          }
+      }
+    })
+  
     wx.request({ //获取垃圾与收益
       url: (app.globalData.url + '/trash/get'),
       method: 'POST',

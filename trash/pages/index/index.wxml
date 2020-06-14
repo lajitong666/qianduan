@@ -1,6 +1,6 @@
 <view wx:if="{{canIUse}}">
     <view class='header'>
-        <image src='https://www.mifengtushu.com/duoduo/Uploads/image/logo.png'></image>
+        <image src='https://graph.baidu.com/resource/121b9c50bef88acae4e5e01592124872.jpg'></image>
     </view>
 
     <view class='content'>
@@ -8,7 +8,7 @@
         <text>获得你的公开信息(昵称，头像等)</text>
     </view>
 
-    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="">
         授权登录
     </button>
 </view>
