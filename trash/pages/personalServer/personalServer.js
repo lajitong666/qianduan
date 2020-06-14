@@ -1,4 +1,4 @@
-// pages/info/info.js
+// pages/personalServer/personalServer.js
 const app = getApp()
 Page({
 
@@ -8,19 +8,14 @@ Page({
   data: {
 
   },
-  choose: function (e) {
-    var id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '/pages/information/information?id='+id,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this
     wx.request({ //获取资讯列表
-      url: (app.globalData.url + '/info/getAll'),
+      url: (app.globalData.url + '/personalServer/getAll'),
       method: 'POST',
       data: {},
       header: {
@@ -28,9 +23,8 @@ Page({
         'csrf-csrf': 'csrf-csrf'
       },
       success: function (response) {
-        console.log(response.data.data)
         that.setData({
-          infoList: response.data.data
+          list:response.data.data
         })
       }
     })

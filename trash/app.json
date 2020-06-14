@@ -13,10 +13,10 @@
     "pages/hangqing/hangqing",
     "pages/first/first",
     "pages/information/information",
-    "pages/info/info",
     "pages/findDetail/findDetail",
     "pages/upload/upload",
-    "pages/wuye/wuye"
+    "pages/wuye/wuye",
+    "pages/personalServer/personalServer"
   ],
   "window": {
     "backgroundTextStyle": "light",

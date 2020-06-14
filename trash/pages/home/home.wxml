@@ -39,8 +39,8 @@
 			</navigator>
 		</view>
 		<view class="cu-item arrow">
-			<navigator class="content" url="/pages/test/list" hover-class="none">
-				<text class="cuIcon-creativefill text-orange"></text>
+			<navigator class="content" url="/pages/personalServer/personalServer" hover-class="none">
+				<text class="cuIcon-profile text-red"></text>
 				<text class="text-grey">专属物业服务人员</text>
 			</navigator>
 		</view>

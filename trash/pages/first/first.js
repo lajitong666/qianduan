@@ -40,6 +40,27 @@ Page({
     }],
     
   },
+  onLoad: function (options) {
+    var that = this
+    wx.request({ //获取垃圾与收益
+      url: (app.globalData.url + '/trash/get'),
+      method: 'POST',
+      data: {
+        id:1 
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded",
+        'csrf-csrf': 'csrf-csrf'
+      },
+      success: function (response) {
+        console.log(response.data.data)
+        that.setData({
+          trash:response.data.data[0]['trash'],
+          profit:response.data.data[0]['profit']
+        })
+      }
+    }) 
+  },
   scanCode:function(options){
     var that = this;
     wx.scanCode({
