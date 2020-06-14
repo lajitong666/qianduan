@@ -77,21 +77,7 @@ Page({
                         key: 'openId',
                         data: res.data.openid
                      })
-                     /*
-                      wx.request({
-                              url: (app.globalData.apiUrl + '?m=home&c=Api&a=Add&userid=' + res.data + '&province=' + e.detail.userInfo.province + '&city=' + e.detail.userInfo.city + '&nickname=' + e.detail.userInfo.nickName).replace(/\s+/g, ""),
-                              method: "GET",
-                              header: {
-                                  'content-type': 'application/json'
-                              },
-                              success(res) {
-                                  console.log(res.data)
-                                  wx.setStorage({
-                                      key: 'userid',
-                                      data: res.data[0]["ID"]
-                                  })
-                              }
-                          })    */
+
                   }
               })
           }

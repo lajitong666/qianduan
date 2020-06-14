@@ -39,7 +39,8 @@ Page({
     })
 },
 bindGetUserInfo: function (e) {
-  if (e.detail.userInfo) {
+    console.log(e);
+  if (e) {
       console.log(e.detail.userInfo)
       wx.setStorage({
           key: 'userinformation',
@@ -104,8 +105,6 @@ bindGetUserInfo: function (e) {
                               })
 
                           }
-
-
                       }
 
                   })

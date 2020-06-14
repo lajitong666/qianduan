@@ -35,7 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    url:"http://localhost:8081", //http://49.233.216.140:8080/lajitong--plus
+    url:"http://49.233.216.140:8080/lajitong--plus", //http://49.233.216.140:8080/lajitong--plus  http://localhost:8081
     appId: 'wx5e3066fcc86059d3',     
     openId: 'l0h5ePG1stxZW7REGKHdrcsCu0',    //每个用户的微信号加密之后的openid
     session_key: null,   //保留

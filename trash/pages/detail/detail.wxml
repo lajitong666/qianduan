@@ -1,10 +1,13 @@
 <view class="cu-card dynamic {{isCard?'no-card':''}}">
 	<view class="cu-item shadow">
 		<view class="text-title">{{waste.name}}</view>
-		<image class="full" src="{{waste.photo}}"></image>
+		<image class="full" style="width:100%" src="{{waste.photo}}"></image>
 		<view class="flex solid-bottom padding justify-between">
 			<text class="bg-white padding-sm margin-xs radius">垃圾种类</text>
-			<view class="bg-white padding-sm margin-xs radius">{{waste.type}}</view>
+			<view class="bg-white padding-sm margin-xs radius" wx:if="{{waste.type==0}}">可回收物</view>
+			<view class="bg-white padding-sm margin-xs radius" wx:if="{{waste.type==1}}">有害垃圾</view>
+			<view class="bg-white padding-sm margin-xs radius" wx:if="{{waste.type==2}}">湿垃圾</view>
+			<view class="bg-white padding-sm margin-xs radius" wx:if="{{waste.type==3}}">干垃圾</view>
 		</view>
 		<view class="flex solid-bottom padding justify-between">
 			<text class="bg-white padding-sm margin-xs radius">行价</text>
@@ -30,7 +33,7 @@
 	</view>
 
 	<view wx:if="{{current=='tab2'}}">
-		<image class="full" src="{{waste.photoDetail}}"></image>  <!-- {{}}   -->
+		<image class="full" style="width:100%" src="{{waste.photoDetail}}"></image> <!-- {{}}   -->
 	</view>
 
 </view>
