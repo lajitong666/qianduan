@@ -1,5 +1,5 @@
 <view class="cu-card article {{isCard?'no-card':''}}" wx:for="{{messageList}}" wx:for-index="index" wx:for-item="item">
-  <view class="cu-item shadow">
+  <view class="cu-item shadow" data-id="{{item.autoId}}" bindtap="choose">
     <view class="title">
       <view class="text-cut">{{item.synopsis}}</view>
     </view>

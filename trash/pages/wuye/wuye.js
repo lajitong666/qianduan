@@ -12,7 +12,8 @@ Page({
     propertySynopsis:'',
     propertyDetail:'',
     grade:'',
-    address:''
+    address:'',
+    image:''
   },
 
   /**
@@ -35,7 +36,8 @@ Page({
           propertySynopsis:response.data.data.synopsis,
           propertyDetail:response.data.data.detail,
           grade:response.data.data.grade,
-          address:response.data.data.address
+          address:response.data.data.address,
+          image:response.data.data.image
         })
       }
     })

@@ -6,7 +6,7 @@
     <text class="const-text">发表于</text>
     <text class="date">{{uploadTime}}</text>
   </view>
-  <text class="title">{{author}}</text>
+  <text class="title">{{title}}</text>
   <view class="tool">
     <view class="horizon"></view>
   </view>

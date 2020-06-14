@@ -1,7 +1,12 @@
+<i-panel title="">
+    <i-notice-bar icon="systemprompt" loop>
+       检测到您当前所在小区为天津市北辰区河北工业大学教师公寓
+    </i-notice-bar>
+</i-panel>
 <view class="content">
 	<view class="top">
 		<view class="top-tr">
-			<image src="{{trimg}}" class="top-trimg"></image>
+			<image src="{{image}}" class="top-trimg"></image>
 		</view>
 		<view class="top-info">
 			<view class="toin-name">{{propertyName}}</view>

@@ -37,7 +37,7 @@
 			</view>
 			<view class="cu-list menu-avatar" wx:if="{{index==0}}">
 
-				<view class="cu-item" wx:for="{{list1}}" wx:for-index="index" wx:for-item="waste"  bindtap="navigator" data-name="{{waste.name}}">
+				<view class="cu-item" wx:for="{{list1}}" wx:for-index="index" wx:for-item="waste" bindtap="navigator" data-name="{{waste.name}}">
 
 					<view class="cu-avatar radius lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);">
 					</view>
@@ -53,7 +53,7 @@
 			</view>
 			<view class="cu-list menu-avatar" wx:if="{{index==1}}">
 
-				<view class="cu-item" wx:for="{{list2}}" wx:for-index="index" wx:for-item="waste">
+				<view class="cu-item" wx:for="{{list2}}" wx:for-index="index" wx:for-item="waste" bindtap="navigator" data-name="{{waste.name}}">
 					<view class="cu-avatar radius lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);"></view>
 					<view class="content">
 						<view>
@@ -68,7 +68,7 @@
 			</view>
 			<view class="cu-list menu-avatar" wx:if="{{index==2}}">
 
-				<view class="cu-item" wx:for="{{list3}}" wx:for-index="index" wx:for-item="waste">
+				<view class="cu-item" wx:for="{{list3}}" wx:for-index="index" wx:for-item="waste" bindtap="navigator" data-name="{{waste.name}}">
 					<view class="cu-avatar radius lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);"></view>
 					<view class="content">
 						<view>
@@ -83,12 +83,11 @@
 			</view>
 			<view class="cu-list menu-avatar" wx:if="{{index==3}}">
 
-				<view class="cu-item" wx:for="{{list4}}" wx:for-index="index" wx:for-item="waste">
+				<view class="cu-item" wx:for="{{list4}}" wx:for-index="index" wx:for-item="waste" bindtap="navigator" data-name="{{waste.name}}">
 					<view class="cu-avatar radius lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);"></view>
 					<view class="content">
 						<view>
 							<text class="text-cut">{{waste.name}}</text>
-
 						</view>
 						<view class="text-gray text-sm flex">
 							<text class="text-cut">{{waste.detail}}</text>

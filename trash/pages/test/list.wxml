@@ -16,5 +16,5 @@
 
 
 <view class="lianxiwomen">
-	<button class="cu-btn bg-green shadow-blur round lg">立即联系我们</button>
+	<button class="cu-btn bg-green shadow-blur round lg" bindtap="phoneUs">立即联系我们</button>
 </view>

@@ -30,4 +30,11 @@ Page({
       isCard: e.detail.value
     })
   },
+  choose:function(e){
+    var id = e.currentTarget.dataset.id;
+    console.log(e);
+    wx.navigateTo({
+      url: '/pages/information/information?id='+id,
+    })
+  },
 });

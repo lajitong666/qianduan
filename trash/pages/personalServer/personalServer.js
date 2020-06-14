@@ -29,6 +29,23 @@ Page({
       }
     })
   },
+  contractMe:function(e){
+    var that = this
+    wx.showActionSheet({
+        itemList: ['立即拨打'],
+        success: function (res) {
+            console.log(res.tapIndex)
+            if(res.tapIndex == 0){
+              wx.makePhoneCall({
+                phoneNumber: e.currentTarget.dataset.id
+            })
+            }
+        },
+        fail: function (res) {
+            console.log(res.errMsg)
+        }
+    })
+},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

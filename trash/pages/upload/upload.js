@@ -58,9 +58,26 @@ Page({
       },
       success(res) {
         console.log("上传动态完成")
-      }
+        that.setData({//显示提示框
+          modalName: 'Image'
+        })
+      },
+      fail:function(e){
+        wx.showToast({
+          title: '请上传图片',
+          icon: 'none',
+          duration: 2000
+        })
+      },
     })
-    var fileName = that.data.fileName
+  },
+  hideModal(e) {//隐藏提示框
+    this.setData({
+      modalName: null
+    })
+    wx.switchTab({
+      url:'/pages/find/find'
+    })
   },
   /**
    * 从本地选择图片
@@ -105,10 +122,10 @@ Page({
   },
   DelImg(e) {
     wx.showModal({
-      title: '召唤师',
-      content: '确定要删除这段回忆吗？',
-      cancelText: '再看看',
-      confirmText: '再见',
+      title: '提示',
+      content: '确定要删除此图片吗？',
+      cancelText: '取消',
+      confirmText: '确定',
       success: res => {
         if (res.confirm) {
           this.data.imgList.splice(e.currentTarget.dataset.index, 1);

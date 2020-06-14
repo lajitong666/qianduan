@@ -1,18 +1,20 @@
 <!--pages/personalServer/personalServer.wxml-->
 <view wx:for="{{list}}">
-	<l-card type="avatar" l-class="card" image="{{item.image}}" title="{{item.name}}" describe="{{item.grade}}">
-		<!-- 此处为content -->
-		<view class="avter-content">
-			{{item.information}}
-		</view>
-		<view class="avter-share-container">
-			<view class="like-container">
-				<l-icon name="like" color="#666" size="28" />
-				<view class="number">联系电话：{{item.tel}}</view>
+	<view style="margin-top:20rpx">
+		<l-card type="avatar" l-class="card" image="{{item.image}}" title="{{item.name}}" describe="{{item.grade}}">
+			<!-- 此处为content -->
+			<view class="avter-content">
+				{{item.information}}
 			</view>
-		</view>
-		<l-tag shape="circle" bg-color="#f3f3f3" font-color="#3963BC" slot="more" size="large">
-			电话咨询
-		</l-tag>
-	</l-card>
+			<view class="avter-share-container">
+				<view class="like-container">
+					<l-icon name="like" color="#666" size="28" />
+					<view class="number">联系电话：{{item.tel}}</view>
+				</view>
+			</view>
+			<l-tag shape="circle" bg-color="#f3f3f3" font-color="#3963BC" slot="more" size="large" bindtap="contractMe" data-id="{{item.tel}}">
+				电话咨询
+			</l-tag>
+		</l-card>
+	</view>
 </view>

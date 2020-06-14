@@ -30,3 +30,20 @@
 <view class="padding flex flex-direction page__hd" bindtap="upload" style="position:fixed; bottom:20;width:100%;">
   <button class="cu-btn bg-green lg">发布</button>
 </view>
+
+
+
+<view class="cu-modal {{modalName=='Image'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="bg-img" style="background-image: url('http://www.botetech.com/uploads/201809/5baef71002b3f.png');height:200px;">
+      <view class="cu-bar justify-end text-white">
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close "></text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
+    </view>
+  </view>
+</view>

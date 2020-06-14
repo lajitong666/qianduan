@@ -1,7 +1,7 @@
 <view class="cu-card dynamic {{isCard?'no-card':''}}">
 	<view class="cu-item shadow">
 		<view class="text-title">{{waste.name}}</view>
-		<image class="full" src="/images/haha.jpg"></image>
+		<image class="full" src="{{waste.photo}}"></image>
 		<view class="flex solid-bottom padding justify-between">
 			<text class="bg-white padding-sm margin-xs radius">垃圾种类</text>
 			<view class="bg-white padding-sm margin-xs radius">{{waste.type}}</view>
@@ -22,20 +22,15 @@
 	<view wx:if="{{current=='tab1'}}">
 		<view class="bg-cyan padding-sm radius margin-top-sm  text-sm light">
 			<view class="flex">
-
 			</view>
 			<view class="flex-sub a">
-				<!--
-{{waste.detail}}
-		-->
-				坚持党对一切工作的领导。党政军民学，东西南北中，党是领导一切的。必须增强政治意识、大局意识、核心意识、看齐意识，自觉维护党中央权威和集中统一领导，自觉在思想上政治上行动上同党中央保持高度一致，完善坚持党的领导的体制机制，坚持稳中求进工作总基调，统筹推进“五位一体”总体布局，协调推进“四个全面”战略布局，提高党把方向、谋大局、定政策、促改革的能力和定力，确保党始终总揽全局、协调各方。
+				{{waste.detail}}
 			</view>
 		</view>
 	</view>
 
 	<view wx:if="{{current=='tab2'}}">
-	<image class="full" src="/images/haha.jpg"></image>
+		<image class="full" src="{{waste.photoDetail}}"></image>  <!-- {{}}   -->
 	</view>
-
 
 </view>

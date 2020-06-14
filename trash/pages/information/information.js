@@ -18,7 +18,7 @@ Page({
       url: (app.globalData.url + '/info/getOne'),
       method: 'POST',
       data: {
-        id:1
+        id:options.id
       },
       header: {
         "content-type": "application/x-www-form-urlencoded",
@@ -31,6 +31,7 @@ Page({
           author:response.data.data[0]['author'],
           uploadTime:response.data.data[0]['uploadTime'],
           detail:response.data.data[0]['detail'], 
+          title:response.data.data[0]['title']
         })
       }
     })

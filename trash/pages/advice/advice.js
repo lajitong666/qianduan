@@ -16,7 +16,6 @@ Page({
  },
   
   PickerChange(e) {
-    console.log(e);
     this.setData({
       index: e.detail.value
     })
@@ -110,5 +109,8 @@ Page({
     this.setData({
       visible1: false
     });
+    wx.switchTab({
+      url:'/pages/home/home'
+    })
   }
 })
