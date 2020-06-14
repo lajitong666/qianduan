@@ -1,48 +1,74 @@
-<view class="cu-form-group margin-top">
-	<view class="title">头像</view>
-	<view class="cu-avatar radius margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg);"></view>
+<!--业主人员-->
+<view wx:if="{{type==0}}">
+	<view class="cu-form-group margin-top">
+		<view class="title">头像</view>
+		<view class="cu-avatar radius margin-left" style="background-image:url({{user.avatarUrl}});"></view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">昵称</view>
+		<view>{{user.nickName}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">真实姓名(用于物业人员联系)</view>
+		<view>{{userDetails.name}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">您的身份</view>
+		<view>业主</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">电话</view>
+		<view>{{userDetails.phone}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">邮箱</view>
+		<view>{{userDetails.email}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">地址选择</view>
+		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+			<view class="picker">
+				{{region[0]}}，{{region[1]}}，{{region[2]}}
+			</view>
+		</picker>
+	</view>
 </view>
-<view class="cu-form-group">
-	<view class="title">昵称</view>
-	<view>{{user.nickName}}</view>
-</view>
-<view class="cu-form-group">
-	<view class="title">个性签名</view>
-	<view>{{userDetails.signature}}</view>
-</view>
-<view class="cu-form-group">
-	<view class="title">性别选择</view>
-	<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
-		<view class="picker">
-			{{userDetails.sex}}
-		</view>
-	</picker>
-</view>
-<view class="cu-form-group">
-	<view class="title">真实姓名</view>
-	<view>{{userDetails.name}}</view>
-</view>
-<view class="cu-form-group">
-	<view class="title">出生日期</view>
-	<picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
-		<view class="picker">
-			{{date}}
-		</view>
-	</picker>
-</view>
-<view class="cu-form-group">
-	<view class="title">绑定电话</view>
-	<view>{{userDetails.phone}}</view>
-</view>
-<view class="cu-form-group">
-	<view class="title">绑定邮箱</view>
-	<view>123**@**.com</view>
-</view>
-<view class="cu-form-group">
-	<view class="title">地址选择</view>
-	<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
-		<view class="picker">
-			{{region[0]}}，{{region[1]}}，{{region[2]}}
-		</view>
-	</picker>
+<!--物业人员-->
+<view wx:if="{{type==1}}">
+	<view class="cu-form-group margin-top">
+		<view class="title">头像</view>
+		<view class="cu-avatar radius margin-left" style="background-image:url({{user.avatarUrl}});"></view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">昵称</view>
+		<view>{{user.nickName}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">真实姓名(用于业主联系)</view>
+		<view>{{userDetails.name}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">您的身份</view>
+		<view>物业人员</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">您的评级</view>
+		<view>{{userDetails.grade}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">电话</view>
+		<view>{{userDetails.phone}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">邮箱</view>
+		<view>{{userDetails.email}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">地址选择</view>
+		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+			<view class="picker">
+				{{region[0]}}，{{region[1]}}，{{region[2]}}
+			</view>
+		</picker>
+	</view>
 </view>

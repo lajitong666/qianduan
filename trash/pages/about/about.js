@@ -45,6 +45,7 @@ Page({
           success:function(res){
             console.log(res)
             that.setData({
+              type:res.data.data['type'],
               userDetails:res.data.data
             })
             console.log("测试")
