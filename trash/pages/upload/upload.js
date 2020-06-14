@@ -12,7 +12,7 @@ Page({
     title:"",
     detail:"",
     imgList: [],
-    userinformation:'',
+    userinformation:''
   },
   /**
    *  文本框输入信息
@@ -37,22 +37,15 @@ Page({
     var that = this
     //上传图片
     console.log(this.data)
-    wx.getStorage({
-      key: 'userinformation',
-      success (res) {
-        that.setData({
-          userinformation:res.data
-        })
-      }
-    })
-    console.log(that.data.userinformation);
+    var information = wx.getStorageSync('userinformation')
+    console.log(information);
     wx.uploadFile({
       url: app.globalData.url + '/find/upload',
       filePath: this.data.imgList[0],
       name: 'contentImage',
       formData: {
-        name:that.data.userinformation.nickName,
-        userImage:that.data.userinformation.avatarUrl,
+        name:information.nickName,
+        userImage:information.avatarUrl,
         title:that.data.title,
         detail: that.data.detail
       },
