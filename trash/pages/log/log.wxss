@@ -1,9 +1,0 @@
-page {
-  background: #fff;
-}
-
-.margin-top-sm {
-  margin-top: 10rpx;
-  
-}
-  

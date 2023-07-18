@@ -1,0 +1,61 @@
+<scroll-view scroll-y class="scrollPage">
+	<view class="UCenter-bg">
+		<image src="{{user.avatarUrl}}" class="cu-avatar xl round " mode="widthFix"></image>
+		<view class="text-xl">{{user.nickName}}
+		</view>
+		<view class="margin-top-sm">
+			<text>{{user.city}}</text>
+		</view>
+		<image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+	</view>
+	<view class="padding flex text-center text-grey bg-white shadow-warp">
+		<view class="flex flex-sub flex-direction solid-right">
+			<view class="text-xxl text-orange">{{userDetails.count1}}次</view>
+			<view class="margin-top-sm">
+				已扔</view>
+		</view>
+		<view class="flex flex-sub flex-direction solid-right">
+			<view class="text-xxl text-blue">{{userDetails.count2}}次</view>
+			<view class="margin-top-sm">
+				上门回收</view>
+		</view>
+		<view class="flex flex-sub flex-direction">
+			<view class="text-xxl text-green">{{userDetails.integral}}分</view>
+			<view class="margin-top-sm">
+				总积分</view>
+		</view>
+	</view>
+	<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+		<view class="cu-item arrow">
+			<navigator class="content" url="/pages/about/about" hover-class="none">
+				<image src="/images/logo.png" class="png" mode="aspectFit"></image>
+				<text class="text-grey">个人信息</text>
+			</navigator>
+		</view>
+		<view class="cu-item arrow">
+			<navigator class="content" url="/pages/log/log" hover-class="none">
+				<text class="cuIcon-formfill text-green"></text>
+				<text class="text-grey">收益详情</text>
+			</navigator>
+		</view>
+		<view class="cu-item arrow">
+			<navigator class="content" url="/pages/personalServer/personalServer" hover-class="none">
+				<text class="cuIcon-profile text-red"></text>
+				<text class="text-grey">专属物业服务人员</text>
+			</navigator>
+		</view>
+		<view class="cu-item arrow">
+			<navigator class="content" url="/pages/test/list" hover-class="none">
+				<text class="cuIcon-creativefill text-orange"></text>
+				<text class="text-grey">关于我们</text>
+			</navigator>
+		</view>
+		<view class="cu-item arrow">
+			<navigator class="content" url="/pages/advice/advice" hover-class="none">
+				<text class="cuIcon-writefill text-cyan"></text>
+				<text class="text-grey">信息反馈</text>
+			</navigator>
+		</view>
+	</view>
+	<view class="cu-tabbar-height"></view>
+</scroll-view>

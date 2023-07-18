@@ -1,0 +1,7 @@
+/* pages/upload/upload.wxss */
+.tupian{
+  width: 100%;
+}
+page{
+  background-color: white;
+}
