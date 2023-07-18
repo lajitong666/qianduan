@@ -1,61 +1,54 @@
-<scroll-view scroll-y class="scrollPage">
-	<view class="UCenter-bg">
-		<image src="{{user.avatarUrl}}" class="cu-avatar xl round " mode="widthFix"></image>
-		<view class="text-xl">{{user.nickName}}
-		</view>
-		<view class="margin-top-sm">
-			<text>{{user.city}}</text>
-		</view>
-		<image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
-	</view>
-	<view class="padding flex text-center text-grey bg-white shadow-warp">
-		<view class="flex flex-sub flex-direction solid-right">
-			<view class="text-xxl text-orange">{{userDetails.count1}}次</view>
-			<view class="margin-top-sm">
-				已扔</view>
-		</view>
-		<view class="flex flex-sub flex-direction solid-right">
-			<view class="text-xxl text-blue">{{userDetails.count2}}次</view>
-			<view class="margin-top-sm">
-				上门回收</view>
-		</view>
-		<view class="flex flex-sub flex-direction">
-			<view class="text-xxl text-green">{{userDetails.integral}}分</view>
-			<view class="margin-top-sm">
-				总积分</view>
-		</view>
-	</view>
-	<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-		<view class="cu-item arrow">
-			<navigator class="content" url="/pages/about/about" hover-class="none">
-				<image src="/images/logo.png" class="png" mode="aspectFit"></image>
-				<text class="text-grey">个人信息</text>
-			</navigator>
-		</view>
-		<view class="cu-item arrow">
-			<navigator class="content" url="/pages/log/log" hover-class="none">
-				<text class="cuIcon-formfill text-green"></text>
-				<text class="text-grey">收益详情</text>
-			</navigator>
-		</view>
-		<view class="cu-item arrow">
-			<navigator class="content" url="/pages/personalServer/personalServer" hover-class="none">
-				<text class="cuIcon-profile text-red"></text>
-				<text class="text-grey">专属物业服务人员</text>
-			</navigator>
-		</view>
-		<view class="cu-item arrow">
-			<navigator class="content" url="/pages/test/list" hover-class="none">
-				<text class="cuIcon-creativefill text-orange"></text>
-				<text class="text-grey">关于我们</text>
-			</navigator>
-		</view>
-		<view class="cu-item arrow">
-			<navigator class="content" url="/pages/advice/advice" hover-class="none">
-				<text class="cuIcon-writefill text-cyan"></text>
-				<text class="text-grey">信息反馈</text>
-			</navigator>
-		</view>
-	</view>
-	<view class="cu-tabbar-height"></view>
-</scroll-view>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"  indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
+
+<view class="grid col-2 padding-sm">
+   <view class="padding-sm m">
+    <view class=" padding radius text-center shadow-blur b">
+      <view class="text-lg">本月已产生垃圾</view>
+      <view class="margin-top-sm">{{trash}}</view>
+    </view>
+  </view>
+   <view class="padding-sm m">
+    <view class="padding radius text-center shadow-blur b">
+      <view class="text-lg">预计收益</view>
+      <view class="margin-top-sm">{{profit}}元</view>
+    </view>
+  </view>
+  <view class="padding-sm m">
+    <view class="bg-gradual-red padding radius text-center shadow-blur a" bindtap="scanCode">
+      <view class="text-lg">扫一扫</view>
+      <view class="margin-top-sm text">扫码得积分</view>
+    </view>
+  </view>
+  <view class="padding-sm m">
+    <navigator url="/pages/hangqing/hangqing">
+    <view class="bg-gradual-orange padding radius text-center shadow-blur a">
+      <view class="text-lg">资讯</view>
+      <view class="margin-top-sm text">点击查看当前资讯</view>
+    </view>
+     </navigator>
+  </view>
+  <view class="padding-sm m">
+    <navigator url="/pages/yuyue/yuyue">
+    <view class="bg-gradual-green padding radius text-center shadow-blur a">
+      <view class="text-lg">预约</view>
+      <view class="margin-top-sm text">垃圾上门回收</view>
+    </view>
+     </navigator>
+  </view>
+  <view class="padding-sm m">
+    <navigator url="/pages/wuye/wuye">
+    <view class="bg-gradual-blue padding radius text-center shadow-blur a">
+      <view class="text-lg">关于</view>
+      <view class="margin-top-sm text">查看物业信息</view>
+    </view>
+     </navigator>
+  </view>
+</view>

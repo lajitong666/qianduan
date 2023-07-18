@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/baike/baike",
-    "pages/home/home",
+    "pages/mine/mine",
     "pages/about/about",
     "pages/advice/advice",
     "pages/log/log",
@@ -11,7 +11,7 @@
     "pages/yuyue/yuyue",
     "pages/find/find",
     "pages/hangqing/hangqing",
-    "pages/first/first",
+    "pages/home/home",
     "pages/information/information",
     "pages/findDetail/findDetail",
     "pages/upload/upload",
@@ -21,32 +21,32 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "智能垃圾桶",
+    "navigationBarTitleText": "慈安堂",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "selectedColor": "#495056",
     "list": [
       {
-        "pagePath": "pages/first/first",
+        "pagePath": "pages/home/home",
         "text": "首页",
         "iconPath": "images/1.png",
         "selectedIconPath": "images/5.png"
       },
       {
         "pagePath": "pages/baike/baike",
-        "text": "百科",
-        "iconPath": "images/2.png",
-        "selectedIconPath": "images/6.png"
+        "text": "药品分类",
+        "iconPath": "images/medicine1.png",
+        "selectedIconPath": "images/medicine2.png"
       },
       {
         "pagePath": "pages/find/find",
-        "text": "发现",
-        "iconPath": "images/3.png",
-        "selectedIconPath": "images/7.png"
+        "text": "购物车",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/full_cart.png"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/mine/mine",
         "text": "我的",
         "iconPath": "images/4.png",
         "selectedIconPath": "images/8.png"
